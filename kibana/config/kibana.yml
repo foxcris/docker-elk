@@ -1,0 +1,23 @@
+---
+## Default Kibana configuration from Kibana base image.
+## https://github.com/elastic/kibana/blob/master/src/dev/build/tasks/os_packages/docker_generator/templates/kibana_yml.template.js
+#
+server.name: kibana
+server.host: "0"
+elasticsearch.hosts: [ "http://elasticsearch:9200" ]
+xpack.monitoring.ui.container.elasticsearch.enabled: true
+
+## X-Pack security credentials
+#
+elasticsearch.username: kibana
+elasticsearch.password: secret
+
+#TLS
+xpack.security.audit.enabled: true
+#xpack.security.http.ssl.enabled: true
+#xpack.security.http.ssl.key: /usr/share/kibana/config/privkey.pem
+#xpack.security.http.ssl.certificate: /usr/share/kibana/config/fullchain.pem
+
+#server.ssl.enabled: true
+#server.ssl.key: /usr/share/kibana/config/privkey.pem
+#server.ssl.certificate: /usr/share/kibana/config/fullchain.pem
